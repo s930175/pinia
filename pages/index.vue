@@ -1,5 +1,13 @@
 <script setup>
+import { useVoteStore } from '~/stores/vote';
+
 // const store =https://vue-lessons-api.vercel.app/vote/list
+const store = useVoteStore();
+await useAsyncData('vote', async ()=>{
+  const data = await $fetch('https://vue-lessons-api.vercel.app/vote/list');
+  store.setVoteData(data);
+  return data
+});
 </script>
 
 <template>

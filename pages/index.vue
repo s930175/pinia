@@ -6,7 +6,7 @@ const store = useVoteStore();
 await useAsyncData('vote', async ()=>{
   const data = await $fetch('https://vue-lessons-api.vercel.app/vote/list');
   store.setVoteData(data);
-  return data
+  return data;
 });
 </script>
 

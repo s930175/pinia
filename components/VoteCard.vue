@@ -1,11 +1,14 @@
-<script setup></script>
+<script setup>
+const store = useVoteStore();
+
+</script>
 <template>
-  <div class="card">
+  <div class="card" v-for="vote in store.voteData" :key="vote.name">
     <div class="card_info">
-      <img src="" alt="" />
-      <h1>name</h1>
+      <img :src="vote.path" :alt="vote.name" />
+      <h1>{{vote.name}}</h1>
     </div>
-    <VoteBtn> 0 </VoteBtn>
+    <VoteBtn> {{ vote.count }} </VoteBtn>
   </div>
 </template>
 

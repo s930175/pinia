@@ -8,7 +8,7 @@ const store = useVoteStore();
       <img :src="vote.path" :alt="vote.name" />
       <h1>{{vote.name}}</h1>
     </div>
-    <VoteBtn @click="addVote(vote.name)"> {{ vote.count }} </VoteBtn>
+    <VoteBtn @click="store.addVote(vote.name)"> {{ store.isFatch?"投票中":vote.count }} </VoteBtn>
   </div>
 </template>
 

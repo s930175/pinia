@@ -1,14 +1,16 @@
 <script setup>
+import { storeToRefs } from "pinia";
 const store = useVoteStore();
-
+const {voteData,isFatch}  = storeToRefs(store);//解構ref
+const {addVote} = store;//解構非ref
 </script>
 <template>
-  <div class="card" v-for="vote in store.voteData" :key="vote.name">
+  <div class="card" v-for="vote in voteData" :key="vote.name">
     <div class="card_info">
       <img :src="vote.path" :alt="vote.name" />
       <h1>{{vote.name}}</h1>
     </div>
-    <VoteBtn @click="store.addVote(vote.name)"> {{ store.isFatch?"投票中":vote.count }} </VoteBtn>
+    <VoteBtn @click="addVote(vote.name)"> {{ isFatch?"投票中":vote.count }} </VoteBtn>
   </div>
 </template>
 

@@ -3,6 +3,7 @@ import { useVoteStore } from '~/stores/vote';
 
 // const store =https://vue-lessons-api.vercel.app/vote/list
 const store = useVoteStore();
+const testStore = useTestStore();
 await useAsyncData('vote', async ()=>{
   const data = await $fetch('https://vue-lessons-api.vercel.app/vote/list');
   store.setVoteData(data);
@@ -11,6 +12,7 @@ await useAsyncData('vote', async ()=>{
 </script>
 
 <template>
+  {{ testStore.voteToTestData }}
   <div class="vote_app">
     <h1>投票列表</h1>
     <div class="box_list">

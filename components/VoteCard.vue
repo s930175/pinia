@@ -1,7 +1,7 @@
 <script setup>
 import { storeToRefs } from "pinia";
 const store = useVoteStore();
-const {voteData,isFatch}  = storeToRefs(store);//解構ref
+const {voteData,isFatch}  = storeToRefs(store);//解構ref,computed
 const {addVote} = store;//解構非ref
 </script>
 <template>

@@ -4,9 +4,9 @@ export default defineNuxtConfig({
         "dirs": ['stores']
     },
     "runtimeConfig": {
-        "token": '1234567890',
+        "token": '',
         "public": {
-          "apiUrl": 'https://www.mike.com',
+          "apiUrl": '',
         }
       },        
     "modules": [

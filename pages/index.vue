@@ -35,6 +35,8 @@ console.log("WEB_URL=>", process.env.WEB_URL);
     <h1>投票列表</h1>
     <div class="box_list">
       <VoteCard />
+      <SvgIcon name="icon-community" color="#000"/>
+      <SvgIcon name="icon-documentation" color="#000"/>
     </div>
   </div>
 </template>

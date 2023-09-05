@@ -1,3 +1,8 @@
+<script setup>
+//SVG
+   import "virtual:svg-icons-register";
+</script>
+
 <template>
   <NuxtPage />
 </template>

@@ -6,10 +6,26 @@ const store = useVoteStore();
 const testStore = useTestStore();
 await useAsyncData('vote', async ()=>{
   const data = await $fetch('https://vue-lessons-api.vercel.app/vote/list');
-  
+
   store.setVoteData(data);
   return data;
 });
+//RuntimeConfig
+// const config = useRuntimeConfig();
+// console.log(config.public);
+// //只在server階段被執行
+// if (process.server) {
+//  console.log("server token:", config.token);
+// }
+//在server設定環境變數，refresh看不到
+const config = useRuntimeConfig();
+const { data,refresh } = await useFetch(`${config.public.apiUrl}/api/banner`, {
+  headers: {
+    Authorization: `Bearer ${config.token}`,
+  },
+});
+
+
 </script>
 
 <template>

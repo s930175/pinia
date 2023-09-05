@@ -24,8 +24,9 @@ const { data,refresh } = await useFetch(`${config.public.apiUrl}/api/banner`, {
     Authorization: `Bearer ${config.token}`,
   },
 });
-
-
+//不用runtimeConfig(翻新專案)
+console.log("ENV=>", process.env.ENV);
+console.log("WEB_URL=>", process.env.WEB_URL);
 </script>
 
 <template>

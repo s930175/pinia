@@ -3,12 +3,18 @@ export default defineNuxtConfig({
     "imports": {
         "dirs": ['stores']
     },
-    "runtimeConfig": {
-        "token": '',
-        "public": {
-          "apiUrl": '',
-        }
-      },        
+    // "runtimeConfig": {
+    //     "token": '',
+    //     "public": {
+    //       "apiUrl": '',
+    //     }
+    //   },        
+    "vite": {
+        "define": {
+          "process.env": process.env,
+        },
+      },
+     
     "modules": [
         [
             '@pinia/nuxt',
